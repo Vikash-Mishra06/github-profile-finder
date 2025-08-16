@@ -19,33 +19,39 @@ function getRepos(username) {
 }
 
 function decorateProfileData(details) {
-  console.log(details);
-  let data = `<img src="${details.avatar_url}" alt="User Avatar" class="w-32 h-32 rounded-full bg-gray-300 "/>
+  let data = `
+    <div class="flex flex-col md:flex-row gap-6 items-center">
+      <img src="${
+        details.avatar_url
+      }" alt="User Avatar" class="w-32 h-32 rounded-full shadow-lg"/>
 
-          <!-- User Info -->
-          <div class="flex-1 space-y-3 ">
-            <h2 class="text-2xl font-semibold text-gray-800">${details.name}</h2>
-            <p class="text-gray-600">${details.bio}</p>
+      <!-- User Info -->
+      <div class="flex-1 space-y-3">
+        <h2 class="text-2xl font-bold text-gray-900">${
+          details.name || details.login
+        }</h2>
+        <p class="text-gray-600">${details.bio || "No bio available"}</p>
 
-
-            <!-- Stats -->
-            <div class="grid grid-cols-3 gap-4 text-center">
-              <div class="bg-white shadow rounded-lg p-3">
-                <p class="text-lg font-bold text-gray-800">${details.public_repos}</p>
-                <p class="text-sm text-gray-500">Repos</p>
-              </div>
-              <div class="bg-white shadow rounded-lg p-3">
-                <p class="text-lg font-bold text-gray-800">${details.followers}</p>
-                <p class="text-sm text-gray-500">Followers</p>
-              </div>
-              <div class="bg-white shadow rounded-lg p-3">
-                <p class="text-lg font-bold text-gray-800">${details.following}</p>
-                <p class="text-sm text-gray-500">Followings</p>
-              </div>
-            </div>
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-4 text-center mt-4">
+          <div class="bg-white rounded-xl shadow p-4 hover:shadow-xl transition-shadow">
+            <p class="text-xl font-bold text-gray-900">${
+              details.public_repos
+            }</p>
+            <p class="text-sm text-gray-500">Repos</p>
           </div>
-        </div>`;
-
+          <div class="bg-white rounded-xl shadow p-4 hover:shadow-xl transition-shadow">
+            <p class="text-xl font-bold text-gray-900">${details.followers}</p>
+            <p class="text-sm text-gray-500">Followers</p>
+          </div>
+          <div class="bg-white rounded-xl shadow p-4 hover:shadow-xl transition-shadow">
+            <p class="text-xl font-bold text-gray-900">${details.following}</p>
+            <p class="text-sm text-gray-500">Following</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
   card.innerHTML = data;
 }
 

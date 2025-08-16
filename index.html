@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
 
-    <body class="bg-gray-50 text-gray-900 min-h-screen flex items-center justify-center p-6">
+  <body
+    class="bg-gray-50 text-gray-900 min-h-screen flex items-center justify-center p-6"
+  >
+    <div class="w-full max-w-2xl">
+      <!-- Card Container -->
+      <div
+        class="bg-white shadow-2xl rounded-3xl p-8 space-y-6 transition-transform transform hover:scale-105 duration-300"
+      >
+        <!-- Title -->
+        <h1 class="text-4xl font-bold text-center text-gray-900">
+          GitHub User Finder
+        </h1>
+        <p class="text-center text-gray-500">
+          Search for any GitHub profile and view details
+        </p>
 
-  <div class="w-full max-w-2xl">
-    <!-- Card Container -->
-    <div class="bg-white shadow-xl rounded-2xl p-8 space-y-6 " >
-      
-      <!-- Title -->
-      <h1 class="text-3xl font-bold text-center text-gray-800">GitHub User Finder</h1>
-      <p class="text-center text-gray-500">Search for any GitHub profile and view details</p>
+        <!-- Search Form -->
+        <form class="flex items-center gap-3">
+          <input
+            type="text"
+            placeholder="Enter GitHub username..."
+            class="usernameinp flex-1 px-5 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gradient-to-r from-blue-400 to-purple-500 focus:border-transparent shadow-sm"
+          />
+          <button
+            type="submit"
+            class="search px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:from-purple-600 hover:to-blue-500 transition-all duration-300"
+          >
+            Search
+          </button>
+        </form>
 
-      <!-- Search Form -->
-      <form class="flex items-center gap-3">
-        <input 
-          type="text" 
-          placeholder="Enter GitHub username..." 
-          class="usernameinp flex-1 px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-        />
-        <button 
-          type="submit" 
-          class="search px-6 py-3 bg-blue-600 text-white font-medium rounded-xl shadow hover:bg-blue-700 transition-all duration-200 "
+        <!-- Result Section -->
+        <div
+          class="card bg-gradient-to-b from-gray-100 to-gray-200 rounded-2xl p-6 shadow-inner space-y-6"
         >
-          Search
-        </button>
-      </form>
-
-      <!-- Result Section -->
-      <div class="card bg-gray-100 rounded-xl p-6 shadow-inner">
-        <!-- Placeholder for user data -->
-        
+          <!-- User data will be inserted here -->
+        </div>
       </div>
-
     </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
